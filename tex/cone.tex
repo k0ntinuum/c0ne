@@ -35,9 +35,9 @@
 
 Cone is a symmetric cryptosystem based on elementary cellular automata. The key for a Cone machine is an ECA rule. So far, ternary rules have worked well, and they go with the triangle theme, but the only limitation on the base is complexity. Both number of symbols and neighborhood size are adjustable, though the cost increases exponentially. If the base and neighborhood are both $3$, then $27$ ternary digits are required to determine a key, for a space of $3^{27}$ possible keys.
 
-Each symbol of plaintext is put at the center of this rule (replacing its central symbol). Then the CA is computed in a triangular fashion, in order to get the apex symbol, which is added mod $b$ to the plaintext symbol to get the ciphertext symbol. Note that the key therefore serves not only as the rule but also as its own seed (excepting its middle symbol, which is replaced by the plaintext symbol.) 
+Each symbol of plaintext is put at the center of this rule (replacing its central symbol). Then the CA is computed in a triangular fashion, in order to get the apex symbol, which is added mod $b$ to the plaintext symbol to get the ciphertext symbol. Note that the key therefore serves not only as the rule but also as its own seed (excepting its middle symbol, which is replaced by the plaintext symbol.
 
-After each ciphertext symbol is computed, this bottom key/seed row is rotated $p + 1$ positions, so that the evolution of the machine is a function of the individual plaintext. 
+More importantly, the effective rule itself is changed with this shift, so that many different ECA rules are used as the base row is shifted.  After each ciphertext symbol is computed, this bottom key/seed row is rotated $p + 1$ positions, so that the evolution of the machine is a function of the individual plaintext. 
 
 \end{huge}
 }}
