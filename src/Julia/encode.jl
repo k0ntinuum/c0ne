@@ -20,8 +20,9 @@ end
 
 function encrypt(p,q)
     for i in 0:26
-        f = deepcopy(q)
+        f = deepcopy(q)   
         circshift!(f, i)
+        _ = encode(f,f)
         p = encode(p,f)
         reverse!(p)
     end
@@ -32,6 +33,7 @@ function decrypt(c,q)
     for i in 0:26
         f = deepcopy(q)
         circshift!(f, 26 - i)
+        _ = encode(f,f)
         reverse!(c)
         c = decode(c,f)   
     end
